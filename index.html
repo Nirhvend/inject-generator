@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>INJECT GENERATOR ULTRASPIN88</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 30px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      color: #d62828;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #2a9d8f;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      background-color: #e9ffe9;
+      padding: 15px;
+      border-left: 4px solid #2a9d8f;
+      display: none;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+    .admin {
+      margin-top: 20px;
+      font-size: 13px;
+      text-align: right;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>INJECT GENERATOR<br>SLOT ULTRASPIN88</h2>
+
+    <label for="nama">NAMA ID :</label>
+    <input type="text" id="nama" placeholder="Masukkan ID Anda">
+
+    <label for="deposit">SALDO DEPOSIT :</label>
+    <input type="number" id="deposit" placeholder="Contoh: 100000">
+
+    <button onclick="injectSaldo()">INJECT</button>
+
+    <div class="result" id="resultBox">
+      <p id="resultText"></p>
+    </div>
+
+    <div class="note">
+      <strong>NOTE:</strong> Otomatis Active Setelah Deposit, Cukup Sekali INJECT
+    </div>
+    <div class="admin">ADMIN : SASILA</div>
+  </div>
+
+  <script>
+    function injectSaldo() {
+      const nama = document.getElementById('nama').value.trim();
+      const deposit = parseInt(document.getElementById('deposit').value.trim());
+      const resultBox = document.getElementById('resultBox');
+      const resultText = document.getElementById('resultText');
+
+      if (!nama || isNaN(deposit)) {
+        alert('Mohon isi semua kolom dengan benar.');
+        return;
+      }
+
+      let saldoMasuk;
+      if (deposit === 50000) saldoMasuk = 200000;
+      else if (deposit === 100000) saldoMasuk = 300000;
+      else if (deposit === 200000) saldoMasuk = 450000;
+      else if (deposit === 300000) saldoMasuk = 600000;
+      else {
+        saldoMasuk = deposit; // tidak berubah jika tidak sesuai template
+      }
+
+      resultText.innerHTML = `✅ Inject Berhasil untuk <strong>${nama}</strong><br>
+        💰 Saldo Deposit: Rp${deposit.toLocaleString()}<br>
+        🎉 Saldo Setelah Inject: <strong>Rp${saldoMasuk.toLocaleString()}</strong>`;
+
+      resultBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
